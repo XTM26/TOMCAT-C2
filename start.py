@@ -25,12 +25,12 @@ def InitCertificates(Host="0.0.0.0"):
     try:
         from Cores.Systems.CertificateManager import CertificateManager
 
-        StrObject.Messages(f"Initializing MTLS Certificate Infrastructure")
+        StrObject.Messages("Initializing MTLS Certificate Infrastructure")
         CertManager = CertificateManager()
         CertManager.Initialize(Host)
-        StrObject.Messages(f"Certificate Infrastructure Ready!")
+        StrObject.Messages("Certificate Infrastructure Ready!")
         StrObject.Messages(f"Certificates Stored In: {CertManager.CertsDir}")
-        StrObject.Messages(f"Files created:")
+        StrObject.Messages("Files created:")
         StrObject.Messages(
             f"{TMColor.brightGreen}- {CertManager.CAKeyPath} (CA Private Key)"
         )
@@ -43,7 +43,7 @@ def InitCertificates(Host="0.0.0.0"):
         StrObject.Messages(
             f"{TMColor.brightGreen}- {CertManager.ServerCertPath} (Server Cert)"
         )
-        StrObject.Messages(f"Next Steps:")
+        StrObject.Messages("Next Steps:")
         StrObject.Messages("   1. Generate agent certificates:")
         StrObject.Messages("       python3 start.py -a <agent-id>")
         StrObject.Messages("   2. Start server with MTLS:")
@@ -72,7 +72,7 @@ def GenerateAgentCert(
         StrObject.Messages(f"Generating Agent Certificate: {AgentID}")
         CertManager = CertificateManager()
         if not os.path.exists(CertManager.CACertPath):
-            StrObject.Warnings(f"CA Not Found. Run: python3 start.py --init-certs")
+            StrObject.Warnings("CA Not Found. Run: python3 start.py --init-certs")
             return
         ClientKeyPath, ClientCertPath, CACertPath = CertManager.CreateClientCertificate(
             AgentID, UseRawName=UseRawName
@@ -124,7 +124,7 @@ def GenerateAgentCert(
             if HideConsole:
                 f.write("Hide Console Mode Activated.")
                 f.write("Console Window Will Be Hidden On Execution.")
-        StrObject.Messages(f"Agent Certificate Generated!")
+        StrObject.Messages("Agent Certificate Generated!")
         StrObject.Messages(f"Deployment Package: {DeployDir}")
         StrObject.Messages(f"Server: {ServerHost}:{ServerPort}")
         StrObject.Messages(f"MTLS: {'ENABLED' if UseMTLS else 'DISABLED'}")
@@ -134,7 +134,7 @@ def GenerateAgentCert(
         StrObject.Messages(
             f"Hide Process Console: {'ENABLED' if HideConsole else 'DISABLED'}"
         )
-        StrObject.Messages(f"Agent Is Pre-Configured And Ready To Deploy")
+        StrObject.Messages("Agent Is Pre-Configured And Ready To Deploy")
     except ImportError:
         StrObject.Warnings(
             "Missing Modules: cryptography. Install With: pip install cryptography"
@@ -182,7 +182,7 @@ def GenerateMultipleAgents(
         StrObject.Messages(f"Generating {Count} Agent Certificates")
         CertManager = CertificateManager()
         if not os.path.exists(CertManager.CACertPath):
-            StrObject.Warnings(f"CA Not Found. Run: python3 start.py --init-certs")
+            StrObject.Warnings("CA Not Found. Run: python3 start.py --init-certs")
             return
         SuccessCount = 0
         for i in range(1, Count + 1):
@@ -249,7 +249,7 @@ def GenerateMultipleAgents(
                 StrObject.Error(f"Error Will Generating {AgentName}: {e}")
                 continue
         StrObject.Messages(f"Generated {SuccessCount}/{Count} Agents Successfully!")
-        StrObject.Messages(f"Deployment Packages: IMPLANT/")
+        StrObject.Messages("Deployment Packages: IMPLANT/")
         StrObject.Messages(f"Server: {ServerHost}:{ServerPort}")
         StrObject.Messages(f"MTLS: {'ENABLED' if UseMTLS else 'DISABLED'}")
         StrObject.Messages(
@@ -258,7 +258,7 @@ def GenerateMultipleAgents(
         StrObject.Messages(
             f"Hide Process Console: {'ENABLED' if HideConsole else 'DISABLED'}"
         )
-        StrObject.Messages(f"Agent Is Pre-Configured And Ready To Deploy")
+        StrObject.Messages("Agent Is Pre-Configured And Ready To Deploy")
     except ImportError:
         StrObject.Warnings(
             "Missing Modules: cryptography. Install With: pip install cryptography"
@@ -273,10 +273,10 @@ def ListAgents():
 
         CertManager = CertificateManager()
         Clients = CertManager.ListClients()
-        StrObject.Messages(f"Agent Certificates")
+        StrObject.Messages("Agent Certificates")
         if not Clients:
-            StrObject.Warnings(f"No Agents Generated Yet")
-            StrObject.Messages(f"Generate with: python3 start.py -a <agent id>")
+            StrObject.Warnings("No Agents Generated Yet")
+            StrObject.Messages("Generate with: python3 start.py -a <agent id>")
         else:
             StrObject.Messages(f"Total Agents: {len(Clients)}")
             for Name, Info in Clients.items():
@@ -301,7 +301,7 @@ def RevokeAgent(AgentID):
         AgentName = f"Agent-{AgentID}"
         StrObject.Messages(f"[*] Revoking Agent: {AgentName}")
         CertManager.RevokeClient(AgentName)
-        StrObject.Messages(f"Agent Revoked Successfully!")
+        StrObject.Messages("Agent Revoked Successfully!")
         StrObject.Messages(f"{AgentName} Can No Longer Connect")
     except ImportError:
         StrObject.Warnings(
@@ -316,18 +316,18 @@ def StartGUI(
 ):
     TBanner.Logo()
     if MeterpreterMode:
-        StrObject.Messages(f"MODE: METERPRETER/MULTI-PROTOCOL")
-        StrObject.Messages(f"Accepts: TOMCAT, Meterpreter, Reverse Shells")
+        StrObject.Messages("MODE: METERPRETER/MULTI-PROTOCOL")
+        StrObject.Messages("Accepts: TOMCAT, Meterpreter, Reverse Shells")
     if UseMTLS:
-        StrObject.Messages(f"MTLS: ENABLED")
+        StrObject.Messages("MTLS: ENABLED")
         if not os.path.exists("Certs/server-cert.pem"):
-            StrObject.Warnings(f"MTLS Certificates Not Found!")
-            StrObject.Warnings(f"Run: python3 start.py --init-certs")
+            StrObject.Warnings("MTLS Certificates Not Found!")
+            StrObject.Warnings("Run: python3 start.py --init-certs")
             sys.exit(1)
     else:
-        StrObject.Warnings(f"MTLS: DISABLED (Plain TCP)")
+        StrObject.Warnings("MTLS: DISABLED (Plain TCP)")
         if not MeterpreterMode:
-            StrObject.Warnings(f"Connections Not Authenticated")
+            StrObject.Warnings("Connections Not Authenticated")
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Cores", "App"))
         from Cores.App.App import TOMCATC2GUI
@@ -336,8 +336,7 @@ def StartGUI(
         os.environ["TOMCAT_METERPRETER_MODE"] = "1" if MeterpreterMode else "0"
         if Mode == "cli":
             from Cores.App.Cli import TOMCATC2CLI
-
-            StrObject.Messages(f"INTERFACE: CLI MODE")
+            StrObject.Messages("INTERFACE: CLI MODE")
             CLI = TOMCATC2CLI()
             CLI.Run(
                 Host=Host,
@@ -347,8 +346,7 @@ def StartGUI(
             )
         elif Mode == "gui":
             from Cores.App.Gui import TOMCATC2GUI
-
-            StrObject.Messages(f"INTERFACE: TKINTER GUI")
+            StrObject.Messages("INTERFACE: TKINTER GUI")
             GUI = TOMCATC2GUI()
             GUI.Run(
                 Host=Host,
@@ -358,12 +356,11 @@ def StartGUI(
             )
         else:
             from Cores.App.App import TOMCATC2GUI
-
-            StrObject.Messages(f"INTERFACE: WEB PANEL (Flask)")
+            StrObject.Messages("INTERFACE: WEB PANEL (Flask)")
             GUI = TOMCATC2GUI()
             GUI.Run(Host=Host, Port=Port)
     except KeyboardInterrupt:
-        StrObject.Warnings(f"Server Stopped By User")
+        StrObject.Warnings("Server Stopped By User")
     except Exception as e:
         StrObject.Error(e)
 

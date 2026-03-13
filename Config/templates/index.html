@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>TOMCAT C2 Framework</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
     <div id="app">
       <div class="mobile-overlay" id="mobile-overlay"></div>
-
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-logo">
           <div class="logo-icon-wrap"><i class="fas fa-terminal"></i></div>
@@ -56,7 +54,6 @@
           <span>2026 CYBERTOM7 OPS</span>
         </div>
       </aside>
-
       <div class="main">
         <div class="mobile-bar">
           <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
@@ -80,7 +77,6 @@
             </span>
           </button>
         </div>
-
         <div class="content">
           <div class="section" id="section-dashboard">
             <div class="stats-grid">
@@ -105,7 +101,6 @@
                 <div class="stat-val" id="stat-uptime" style="font-size:15px">00:00:00</div>
               </div>
             </div>
-
             <div class="card">
               <div class="card-head">
                 <div class="card-title"><i class="fas fa-info-circle"></i>SYSTEM INFORMATION</div>
@@ -120,7 +115,6 @@
               </div>
             </div>
           </div>
-
           <div class="section" id="section-agents">
             <div class="card">
               <div class="card-head">
@@ -145,7 +139,6 @@
               </div>
             </div>
           </div>
-
           <div class="section" id="section-command">
             <div class="card">
               <div class="card-head">
@@ -156,7 +149,6 @@
                 <div class="quick-grid" id="quick-grid"></div>
               </div>
             </div>
-
             <div class="card">
               <div class="card-head">
                 <div class="card-title"><i class="fas fa-file-export"></i>FILE TRANSFER</div>
@@ -176,7 +168,6 @@
                 </div>
               </div>
             </div>
-
             <div class="card">
               <div class="card-head">
                 <div class="card-title"><i class="fas fa-terminal"></i>CONSOLE OUTPUT</div>
@@ -194,7 +185,6 @@
               </div>
             </div>
           </div>
-
           <div class="section" id="section-server">
             <div class="server-grid">
               <div class="card">
@@ -213,7 +203,6 @@
                   <button class="btn full" id="server-toggle-btn"><i class="fas fa-play"></i> Start Server</button>
                 </div>
               </div>
-
               <div class="card">
                 <div class="card-head">
                   <div class="card-title"><i class="fas fa-broadcast-tower"></i>SERVER STATUS</div>
@@ -245,7 +234,6 @@
               </div>
             </div>
           </div>
-
           <div class="section" id="section-logs">
             <div class="card">
               <div class="card-head">
@@ -260,7 +248,6 @@
               </div>
             </div>
           </div>
-
           <div class="section" id="section-about">
             <div class="card">
               <div class="card-head">
@@ -278,7 +265,6 @@
                 </div>
               </div>
             </div>
-
             <div class="card">
               <div class="card-head">
                 <div class="card-title"><i class="fas fa-code"></i>TOOLS INFORMATION</div>
@@ -292,7 +278,6 @@
                 </div>
               </div>
             </div>
-
             <div class="card">
               <div class="card-head">
                 <div class="card-title"><i class="fas fa-exclamation-triangle"></i>DISCLAIMER</div>
@@ -303,7 +288,6 @@
             </div>
           </div>
         </div>
-
         <nav class="bottom-nav">
           <div class="bottom-nav-inner">
             <div class="bnav-item" data-nav="dashboard"><div class="bnav-icon"><i class="fas fa-chart-line"></i></div><div class="bnav-dot"></div></div>
@@ -315,7 +299,6 @@
         </nav>
       </div>
     </div>
-
     <script src="{{ url_for('static', filename='js/themes/theme.js') }}"></script>
     <script src="{{ url_for('static', filename='js/sidebar/sidebar.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
