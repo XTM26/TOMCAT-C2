@@ -10,7 +10,7 @@
                                         TOMCAT C2 Frameworks
 ```
 
-**Author:** TOM7  
+**Author:** 0xTOM7  
 **GitHub:** [tom7voldemort](https://github.com/tom7voldemort)
 
 > Copying without owner permission is illegal. If you want to expand this project, ask the owner for collaboration instead.
