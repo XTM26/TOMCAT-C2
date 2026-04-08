@@ -10,8 +10,8 @@
                                         TOMCAT C2 Frameworks
 ```
 
-**Author:** 0xTOM7  
-**GitHub:** [tom7voldemort](https://github.com/tom7voldemort)
+**Author:** 0xTM7  
+**GitHub:** [0xTM7](https://github.com/0xTM7)
 
 > Copying without owner permission is illegal. If you want to expand this project, ask the owner for collaboration instead.
 
@@ -41,7 +41,7 @@ TOMCAT C2 is a multi-protocol Command & Control framework supporting three types
 
 ## Installation
 ```bash
-git clone https://github.com/tom7voldemort/TOMCAT-C2.git
+git clone https://github.com/0xTM7/TOMCAT-C2.git
 ```
 
 ## Requirements

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # TOMCAT C2 Frameworks
-# Author: TOM7
-# GitHub: tom7voldemort
+# Author: 0xTM7
+# GitHub: 0xTM7
 
 """
 [+] NOTE:
@@ -9,7 +9,7 @@
     -- If you want to expand this project, ask owner for collaboration instead.
 
     Thanks for understanding.
-    ~TOM7
+    ~0xTM7
 """
 
 import os
@@ -336,6 +336,7 @@ def StartGUI(
         os.environ["TOMCAT_METERPRETER_MODE"] = "1" if MeterpreterMode else "0"
         if Mode == "cli":
             from Cores.App.Cli import TOMCATC2CLI
+
             StrObject.Messages("INTERFACE: CLI MODE")
             CLI = TOMCATC2CLI()
             CLI.Run(
@@ -346,6 +347,7 @@ def StartGUI(
             )
         elif Mode == "gui":
             from Cores.App.Gui import TOMCATC2GUI
+
             StrObject.Messages("INTERFACE: TKINTER GUI")
             GUI = TOMCATC2GUI()
             GUI.Run(
@@ -356,6 +358,7 @@ def StartGUI(
             )
         else:
             from Cores.App.App import TOMCATC2GUI
+
             StrObject.Messages("INTERFACE: WEB PANEL (Flask)")
             GUI = TOMCATC2GUI()
             GUI.Run(Host=Host, Port=Port)
