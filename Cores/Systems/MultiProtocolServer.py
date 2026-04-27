@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # TOMCAT C2 Frameworks
-# Author: TOM7
-# GitHub: tom7voldemort
+# Author: XTM26
+# GitHub: XTM26
 
 """
 [+] NOTE:
@@ -9,7 +9,7 @@
     -- If you want to expand this project, ask owner for collaboration instead.
 
     Thanks for understanding.
-    ~TOM7
+    ~XTM26
 """
 
 import json

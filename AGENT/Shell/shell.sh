@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-# Author: TOM7
+# Author: XTM26
 
 green=$(tput setaf 2 2>/dev/null || echo "")
 red=$(tput setaf 1 2>/dev/null || echo "")

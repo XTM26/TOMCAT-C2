@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # TOMCAT C2 Frameworks
-# Author: TOM7
-# GitHub: tom7voldemort
+# Author: XTM26
+# GitHub: XTM26
 
 """
 [+] NOTE:
@@ -9,7 +9,7 @@
     -- If you want to expand this project, ask owner for collaboration instead.
 
     Thanks for understanding.
-    ~TOM7
+    ~XTM26
 """
 
 import threading
@@ -618,7 +618,7 @@ class TOMCATC2GUI:
         Footer.pack_propagate(False)
         tk.Label(
             Footer,
-            text="TOMCAT C2 Framework V2  |  Author: TOM7",
+            text="TOMCAT C2 Framework V2  |  Author: XTM26",
             font=("Segoe UI", 7),
             fg=self.Colors["text3"],
             bg=self.Colors["sidebar"],
@@ -1162,8 +1162,8 @@ class TOMCATC2GUI:
         AboutInner.pack(fill=tk.X, padx=16, pady=12)
         AboutInfo = [
             ("Framework", "TOMCAT C2 V2"),
-            ("Author", "TOM7"),
-            ("GitHub", "tom7voldemort"),
+            ("Author", "XTM26"),
+            ("GitHub", "XTM26"),
         ]
         for Label, Value in AboutInfo:
             Row = tk.Frame(AboutInner, bg=self.Colors["bg2"])

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # TOMCAT C2 Frameworks
-# Author: TOM7
-# GitHub: tom7voldemort
+# Author: XTM26
+# GitHub: XTM26
 
 """
 [+] NOTE:
@@ -9,7 +9,7 @@
     -- If you want to expand this project, ask owner for collaboration instead.
 
     Thanks for understanding.
-    ~TOM7
+    ~XTM26
 """
 
 import socket
@@ -84,7 +84,7 @@ class TOMCATC2SERVER:
                 self.SSLContext.options |= ssl.OP_NO_SSLv3
                 self.SSLContext.options |= ssl.OP_NO_TLSv1
                 self.SSLContext.options |= ssl.OP_NO_TLSv1_1
-            StrObject.Messages(f"MTLS Context Initialized Successfully")
+            StrObject.Messages("MTLS Context Initialized Successfully")
             return True
         except Exception as e:
             StrObject.Error(f"MTLS Setup Error: {e}")

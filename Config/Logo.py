@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # TOMCAT C2 Frameworks V2
-# Author: TOM7
-# GitHub: tom7voldemort
+# Author: XTM26
+# GitHub: XTM26
 
 """
 [+] NOTE:
@@ -9,7 +9,7 @@
     -- If you want to expand this project, ask owner for collaboration instead.
 
     Thanks for understanding.
-    ~TOM7
+    ~XTM26
 """
 
 import random
@@ -26,8 +26,8 @@ Now = datetime.now()
 class AUTHBanner:
     def Logo():
         Banner = f"""
-            {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Author       :   {TMColor.white}TOM7
-            {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Github       :   {TMColor.white}tom7voldemort
+            {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Author       :   {TMColor.white}XTM26
+            {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Github       :   {TMColor.white}XTM26
             {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Version      :   {TMColor.white}2.0
             {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Time         :   {TMColor.white}{Now.strftime("%H:%M:%S")}
             {TMColor.red}[{TMColor.white}+{TMColor.red}]  {TMColor.red}Date         :   {TMColor.white}{Now.strftime("%Y-%m-%d")}
