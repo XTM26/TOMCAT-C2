@@ -165,7 +165,7 @@ class MultiProtocolServer:
                 self.SSLContext.set_ciphers("HIGH:!aNULL:!MD5:!DSS")
             except Exception:
                 pass
-            StrObject.Messages(f"MTLS Context Initialized")
+            StrObject.Messages("MTLS Context Initialized")
             return True
         except Exception as e:
             StrObject.Error(f"MTLS Setup Error: {e}")

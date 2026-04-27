@@ -21,7 +21,7 @@ from flask import Flask, render_template, jsonify, request
 from time import time
 
 
-class TOMCATC2GUI:
+class TOMCATC2APP:
     def __init__(self):
         import os
 
@@ -280,5 +280,5 @@ class TOMCATC2GUI:
 
     def Run(self, Host="0.0.0.0", Port=5000, Debug=False):
         StrObject.Messages(f"Starting Web Panel On http://{Host}:{Port}")
-        StrObject.Messages(f"Press Ctrl+C To Stop")
+        StrObject.Messages("Press Ctrl+C To Stop")
         self.App.run(host=Host, port=Port, debug=Debug, threaded=True)

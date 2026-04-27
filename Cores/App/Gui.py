@@ -1727,7 +1727,7 @@ class TOMCATC2GUI:
             return
         self.CommandHistory.append(Cmd)
         self.HistoryIndex = -1
-        self.TerminalWrite(f"❯ ", "prompt")
+        self.TerminalWrite("❯ ", "prompt")
         self.TerminalWrite(f"{Cmd}\n")
         self.AddLog(f"[>] #{Sid}: {Cmd}")
         self.TerminalInput.delete(0, tk.END)

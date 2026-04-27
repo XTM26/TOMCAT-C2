@@ -100,11 +100,11 @@ class CertificateManager:
             and os.path.exists(self.CACertPath)
             and not Force
         ):
-            StrObject.Messages(f"Loading Existing CA")
+            StrObject.Messages("Loading Existing CA")
             self.CAKey = self.LoadPrivateKey(self.CAKeyPath)
             self.CACert = self.LoadCertificate(self.CACertPath)
             return True
-        StrObject.Messages(f"Generating Certificate Authority")
+        StrObject.Messages("Generating Certificate Authority")
         self.CAKey = self.GeneratePrivateKey(4096)
         subject = issuer = x509.Name(
             [
@@ -156,7 +156,7 @@ class CertificateManager:
         self.SaveCertificate(self.CACert, self.CACertPath)
         self.Metadata["CACreated"] = datetime.utcnow().isoformat()
         self.SaveMetadata()
-        StrObject.Messages(f"CA Created Successfully!")
+        StrObject.Messages("CA Created Successfully!")
         StrObject.Messages(f"{TMColor.brightGreen} CA Key: {self.CAKeyPath}")
         StrObject.Messages(f"{TMColor.brightGreen} CA Cert: {self.CACertPath}")
         return True
@@ -167,14 +167,14 @@ class CertificateManager:
             and os.path.exists(self.ServerCertPath)
             and not Force
         ):
-            StrObject.Messages(f"Loading Existing Server Certificate")
+            StrObject.Messages("Loading Existing Server Certificate")
             self.ServerKey = self.LoadPrivateKey(self.ServerKeyPath)
             self.ServerCert = self.LoadCertificate(self.ServerCertPath)
             return True
         if not self.CAKey or not self.CACert:
-            StrObject.Warnings(f"CA Not Found. Creating CA First")
+            StrObject.Warnings("CA Not Found. Creating CA First")
             self.CreateCA()
-        StrObject.Messages(f"Generating Server Certificate")
+        StrObject.Messages("Generating Server Certificate")
         self.ServerKey = self.GeneratePrivateKey(2048)
         subject = x509.Name(
             [
@@ -255,14 +255,14 @@ class CertificateManager:
         self.SaveCertificate(self.ServerCert, self.ServerCertPath)
         self.Metadata["ServerCreated"] = datetime.utcnow().isoformat()
         self.SaveMetadata()
-        StrObject.Messages(f"Server Certificate Created Successfully!")
+        StrObject.Messages("Server Certificate Created Successfully!")
         StrObject.Messages(f"{TMColor.brightGreen} Server Key: {self.ServerKeyPath}")
         StrObject.Messages(f"{TMColor.brightGreen} Server Cert: {self.ServerCertPath}")
         return True
 
     def CreateClientCertificate(self, ClientID, ValidDays=365, UseRawName=False):
         if not self.CAKey or not self.CACert:
-            StrObject.Warnings(f"CA Not Found. Creating CA First")
+            StrObject.Warnings("CA Not Found. Creating CA First")
             self.CreateCA()
         if UseRawName:
             ClientName = ClientID
@@ -340,17 +340,17 @@ class CertificateManager:
             "CertPath": ClientCertPath,
         }
         self.SaveMetadata()
-        StrObject.Messages(f"Client Certificate Created Successfully!")
+        StrObject.Messages("Client Certificate Created Successfully!")
         StrObject.Messages(f"{TMColor.brightGreen} Client ID: {ClientName}")
         StrObject.Messages(f"{TMColor.brightGreen} Client Key: {ClientKeyPath}")
         StrObject.Messages(f"{TMColor.brightGreen} Client Cert: {ClientCertPath}")
         return ClientKeyPath, ClientCertPath, self.CACertPath
 
     def Initialize(self, ServerHost="0.0.0.0"):
-        StrObject.Messages(f"TOMCAT C2 - MTLS Certificate Manager")
+        StrObject.Messages("TOMCAT C2 - MTLS Certificate Manager")
         self.CreateCA()
         self.CreateServerCertificate(ServerHost)
-        StrObject.Messages(f"Certificate Infrastructure Ready!")
+        StrObject.Messages("Certificate Infrastructure Ready!")
         return True
 
     def GetServerFiles(self):
@@ -402,12 +402,10 @@ if __name__ == "__main__":
                     "[!] Usage: python CertificateManager.py revoke <client-name>",
                 )
         else:
-            StrObject.Messages(f"Usage:")
-            StrObject.Messages(f"    python3 CertificateManager.py init [server-host]")
-            StrObject.Messages(f"    python3 CertificateManager.py client <client-id>")
-            StrObject.Messages(f"    python3 CertificateManager.py list")
-            StrObject.Messages(
-                f"    python3 CertificateManager.py revoke <client-name>"
-            )
+            StrObject.Messages("Usage:")
+            StrObject.Messages("    python3 CertificateManager.py init [server-host]")
+            StrObject.Messages("    python3 CertificateManager.py client <client-id>")
+            StrObject.Messages("    python3 CertificateManager.py list")
+            StrObject.Messages("    python3 CertificateManager.py revoke <client-name>")
     else:
         CertManager.Initialize()

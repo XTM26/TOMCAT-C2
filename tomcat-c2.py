@@ -330,7 +330,6 @@ def StartGUI(
             StrObject.Warnings("Connections Not Authenticated")
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Cores", "App"))
-        from Cores.App.App import TOMCATC2GUI
 
         os.environ["TOMCAT_USE_MTLS"] = "1" if UseMTLS else "0"
         os.environ["TOMCAT_METERPRETER_MODE"] = "1" if MeterpreterMode else "0"
@@ -357,10 +356,10 @@ def StartGUI(
                 MeterpreterMode=MeterpreterMode,
             )
         else:
-            from Cores.App.App import TOMCATC2GUI
+            from Cores.App.App import TOMCATC2APP
 
             StrObject.Messages("INTERFACE: WEB PANEL (Flask)")
-            GUI = TOMCATC2GUI()
+            GUI = TOMCATC2APP()
             GUI.Run(Host=Host, Port=Port)
     except KeyboardInterrupt:
         StrObject.Warnings("Server Stopped By User")
