@@ -319,3 +319,7 @@ The fix applies SSL wrapping based on a **peek** of the first bytes — plain-TC
 - Each agent receives its own unique key pair; revoking one does not affect others.
 - Without `-T`/`--mtls`, any client that completes the TOMCAT handshake will be accepted — use mTLS in production.
 - Fernet keys are ephemeral (generated at server start); restarting the server invalidates all existing agent sessions.
+
+---
+
+<p align="center">&copy; 2026 XTM26 &amp; C7SEC</p>
