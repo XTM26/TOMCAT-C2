@@ -1,35 +1,39 @@
-<div align="center">
-    <img src="src/logo.png" width="300px" height="auto" alt="TOMCAT-C2 Logo" >
-</div>
+![logo](img/logo.png)
+
 <h2 align="center">TOMCAT-C2 Framework Changelogs</h2>
 
 ---
 
-<h2 align="center">TOMCAT-C2 V1.0</h2>
-<h4 align="left">Changelog:</h4>
-<p align="left">2025, April 16</p>
-<p align="left">Initial Push Release</p>
+## &target; V1.0
+
+#### Date: 2025, April 16
+
+- Initial Release
 
 ---
 
-<h2 align="center">TOMCAT-C2 V1.5</h2>
-<h4 align="left">Changelog:</h4>
-<p align="left">2026, Januari 02</p>
-<p align="left">Adding more interfaces type including CLI, GUI & WEB App</p>
-<p align="left">Adding more agent/shell</p>
-<p align="left">Adding mTLS connection</p>
-<p align="left">Project structural update</p>
+## &target; V1.5
+
+#### Date: 2025, September 02
+
+- Adding more interfaces type including CLI, GUI & WEB App
+- Adding more agent/shell
+- Adding mTLS connection
+- Project structural update
 
 ---
 
-<h2 align="center">TOMCAT-C2 V2.0</h2>
-<h4 align="left">Changelog:</h4>
-<p align="left">2026, Januari 08</p>
-<p align="left">All interfaces update</p>
-<p align="left">File transfer method added</p>
-<p align="left">Adding elevation/base escalating command</p>
-<p align="left">mTLS logic bug fixes from version 1.5</p>
+## &target; V2.0
+
+#### Date: 2026, Januari 08
+
+- All interfaces update
+- File transfer method added
+- Adding elevation/base escalating command
+- mTLS logic bug fixes from version 1.5
 
 ---
 
-<p align="center">&copy; 2026 XTM26 &amp; C7SEC</p>
+> Note: For all the version above currently is under development. If you spotted a bug, please contact me via email: `tomcat7wardns@gmail.com` or via: [instagram](https://instagram.com/xtm26.xp)
+
+<p align="center">&copy; 2026 XTM26</p>
