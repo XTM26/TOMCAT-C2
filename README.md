@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="src/logo.png" width="300px" height="auto" alt="TOMCAT-C2 Logo" >
+    <img src="img/logo.png" width="300px" height="auto" alt="TOMCAT-C2 Logo" >
 </div>
 
 <h2 align="center">TOMCAT-C2 Framework</h2>
