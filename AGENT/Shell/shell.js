@@ -19,7 +19,7 @@ function Shell() {
             console.log(`CONNECTED TO: ${SERVER}:${PORT}`);
         });
     } catch (Error) {
-        console.log(`UNEXPECTED ERROR !!!: ${Error}`);
+        console.log(`UNEXPECTED ERROR!: ${Error}`);
     }
 }
 
