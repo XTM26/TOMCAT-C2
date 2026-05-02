@@ -1,4 +1,4 @@
-![logo](../img/logo.png)
+![logo](img/logo.png)
 
 <h2 align="center">&target; Code of Conduct &target;</h2>
 
