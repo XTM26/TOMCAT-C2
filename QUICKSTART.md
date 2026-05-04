@@ -179,4 +179,4 @@ AddPersistence = False
 python3 start.py -a myagent -ah 192.168.1.10 -ap 4444
 ```
 
-<p align="center">&copy; 2026 XTM26 &amp; G2NTM26SEC</p>
+<p align="center">&copy; 2026 XTM26</p>
